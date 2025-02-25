@@ -1,0 +1,1 @@
+#mozemy wybrac droge/przeciwnika ktorego tam spotkamy

@@ -86,6 +86,8 @@ class FirstTierEnemy(Bohater):
         self.bron = random.choice(br.bronie_lvl1)
         self.pasek_hp = PasekHP_terminal(self, kolor="red")
 
+
+
 class SecondTierEnemy(Bohater):
     def __init__(self, name: str, health):
         super().__init__(name, health+random.randint(10,25))
