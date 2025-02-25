@@ -10,6 +10,7 @@ drugihero =  (Bohater.FirstTierEnemy("WrogMaciusia",100))
 while True:
     hero.attack(drugihero)
     drugihero.attack(hero)
+    hero.wyswietl_ekwipunek()
     print(f"Wyposazono Maciusia w helm: {hero.helm.name}")
     print(f"HP maciusia: {hero.health}")
     print(f"Hp wroga : {drugihero.health}")

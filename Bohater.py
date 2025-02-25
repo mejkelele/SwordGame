@@ -15,6 +15,7 @@ class Bohater:
         self.spodnie = ar.nogi
         self.rekawice = ar.dlonie
         self.buty = ar.stopy
+        self.prize_count = 0
 
     def attack(self, target):
         target.health -= (self.bron.damage - target.wartosc_pancerza())
@@ -26,6 +27,11 @@ class Bohater:
     def wartosc_pancerza(self):
         wartosc = self.helm.wartosc + self.tunika.wartosc + self.spodnie.wartosc + self.rekawice.wartosc + self.buty.wartosc
         return wartosc
+
+    def wyswietl_ekwipunek(self):
+        print(f"Ekwipunek bohatera {self.name}")
+        print(f" HEŁM {self.helm.name} - pancerz {self.helm.wartosc}\n TUNIKA {self.tunika.name} - pancerz {self.tunika.wartosc}\n SPODNIE {self.spodnie.name} - pancerz {self.spodnie.wartosc}\n REKAWICE {self.rekawice.name} - pancerz: {self.rekawice.wartosc}\n BUTY {self.buty.name} - pancerz: {self.buty.wartosc}\n Suma pancerza: {self.wartosc_pancerza()}\n\n BRON {self.bron.name} - obrażenia {self.bron.damage}\n")
+
 
 class MainHero(Bohater):
     def __init__(self, name: str, health, bron, helm=None, tunika=None, spodnie=None, rekawice=None, buty=None):
