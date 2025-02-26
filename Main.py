@@ -3,18 +3,20 @@ import Bronie as br
 import Armor as ar
 import random
 
-hero = Bohater.MainHero("Macius",100,br.sztylet,random.choice(ar.helmy_rarity4))
-drugihero =  (Bohater.FirstTierEnemy("WrogMaciusia",100))
-# trzeba podzelic helmy na listy na poziomie rarity 
+hero = Bohater.MainHero("Macius",100,br.sztylet,)
+first_enemy =  (Bohater.FirstTierEnemy("WrogMaciusia",100))
 #poczatek opis twojego bohtaera
+print(f"Twoja walka zaczyna się tutaj. Witaj {hero.name} \n"
+      f"Atakujesz {first_enemy.name}")
 while True:
-    hero.attack(drugihero)
-    drugihero.attack(hero)
-    print(f"Wyposazono Maciusia w helm: {hero.helm.name}")
-    print(f"HP maciusia: {hero.health}")
-    print(f"Hp wroga : {drugihero.health}")
+
+    hero.attack(first_enemy)
+    first_enemy.attack(hero)
     hero.pasek_hp.rysuj()
-    drugihero.pasek_hp.rysuj()
+    first_enemy.pasek_hp.rysuj()
+    if first_enemy.health <= 0:
+        print(f"Pokonano {first_enemy.name}\n")
+
     #if drugihero.health <= 70:
         # for i in range(0,2):
         #     nagroda = random.randrange(1,5)
