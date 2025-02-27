@@ -16,7 +16,7 @@ class Bohater:
         self.rekawice = ar.dlonie
         self.buty = ar.stopy
         self.prize_count = 0
-
+        self.pokonani_wrogowie = 0
     def attack(self, target):
         target.health -= (self.bron.damage - target.wartosc_pancerza())
         target.health = max(target.health, 0)
@@ -34,9 +34,10 @@ class Bohater:
 
 
 class MainHero(Bohater):
-    def __init__(self, name: str, health, bron, helm=None, tunika=None, spodnie=None, rekawice=None, buty=None):
+    def __init__(self, name: str, health, bron=None, helm=None, tunika=None, spodnie=None, rekawice=None, buty=None):
         super().__init__(name, health)
-        self.bron = bron
+        if bron:
+            self.bron = bron
         if helm:
             self.helm = helm
         if tunika:
