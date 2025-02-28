@@ -90,7 +90,7 @@ class MainEnemy(Bohater):
 class FirstTierEnemy(Bohater):
     def __init__(self, name: str, health):
         super().__init__(name, health)
-        self.bron = random.choice(br.bronie_lvl1)
+        self.bron = random.choice(br.bronie_lvl3)
         self.pasek_hp = PasekHP_terminal(self, kolor="red")
 
 
@@ -119,3 +119,49 @@ class FifthTierEnemy(Bohater):
         super().__init__(name, health+random.randint(100,250))
         self.bron = random.choice(br.bronie_lvl5)
         self.pasek_hp = PasekHP_terminal(self, kolor="red")
+
+
+
+enemies = [
+    "Goblin",
+    "Smok",
+    "Ork",
+    "Troll",
+    "Wilkołak",
+    "Demon",
+    "Upiór",
+    "Zombie",
+    "Wampir",
+    "Bazyliszek",
+    "Minotaur",
+    "Krukon",
+    "Hydra",
+    "Gargulec",
+    "Czarnoksiężnik",
+    "Behemot",
+    "Chimera",
+    "Kikimora",
+    "Mantykora",
+    "Banshee",
+    "Driada",
+    "Ożywieniec",
+    "Szlam",
+    "Lich",
+    "Kraken",
+    "Cień",
+    "Golem",
+    "Strzyga",
+    "Harpią",
+    "Faun",
+    "Ent",
+    "Sukkub",
+    "Ifryt",
+    "Berserker",
+    "Rycerz Widmo",
+    "Mroczny Mag",
+    "Ognisty Żywiołak",
+    "Lodowy Olbrzym",
+    "Król Szkieletów",
+    "Feniks"
+]
+

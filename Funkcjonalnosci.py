@@ -90,8 +90,10 @@ def losuj_bront3():
 def losuj_bront4():
     return random.choice(Bronie.bronie_lvl4)
 
+
 def losuj_bront5():
     return random.choice(Bronie.bronie_lvl5)
+
 
 def equip_hero(hero):
     hero.wyposaz_helm(losuj_helmt1())
@@ -107,7 +109,26 @@ def atakuj(hero,target):
         target.attack(hero)
         print("\n")
         time.sleep(1)
-    print(f"Koniec walki! Wygrał {'hero' if hero.health > 0 else 'target'}.")
+    if hero.health > 0 and target.health <= 0:
+        hero.pokonani_wrogowie +=1
+        print(f"Koniec walki! Wygrał {hero.name }.")
+    else:
+        return 0
+
+
+
+def tworz_wroga_t1():
+    return Bohater.FirstTierEnemy(random.choice(Bohater.enemies),random.randint(80,110))
+
+def tworz_wroga_t2():
+    return Bohater.SecondTierEnemy(random.choice(Bohater.enemies),random.randint(80,110))
+def tworz_wroga_t3():
+    return Bohater.SecondTierEnemy(random.choice(Bohater.enemies),random.randint(80,110))
+def tworz_wroga_t4():
+    return Bohater.SecondTierEnemy(random.choice(Bohater.enemies),random.randint(80,110))
+def tworz_wroga_t5():
+    return Bohater.SecondTierEnemy(random.choice(Bohater.enemies),random.randint(80,110))
+
 def wygrana_tier2():
     lista_list = [Armor.helmy_rarity2,Armor.buty_rarity2,Armor.rekawice_rarity2,Armor.spodnie_rarity2,Armor.tunika_rarity2]
     prize_t2 =random.choice(random.choice(lista_list))

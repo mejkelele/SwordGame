@@ -4,14 +4,33 @@ import Armor as ar
 import random
 import Funkcjonalnosci as fn
 
+lista_wrogowt1 = []
+lista_wrogowt2 = []
+lista_wrogowt3 = []
+lista_wrogowt4 = []
+lista_wrogowt5 = []
+
+for i in range (1,15):
+    lista_wrogowt1.append(fn.tworz_wroga_t1())
+    lista_wrogowt2.append(fn.tworz_wroga_t2())
+    lista_wrogowt3.append(fn.tworz_wroga_t3())
+    lista_wrogowt4.append(fn.tworz_wroga_t4())
+    lista_wrogowt5.append(fn.tworz_wroga_t5())
+
 hero = Bohater.MainHero("Macius",100)
-drugihero =  (Bohater.ThirdTierEnemy("WrogMaciusia",100))
 count =6
 print(f"Witaj {hero.name} otrzymales: \n")
 fn.equip_hero(hero)
+#
+#
+#
+wrog1 = random.choice(lista_wrogowt1)
+fn.atakuj(hero,wrog1)
+lista_wrogowt1.remove(wrog1)
 
-while hero.pokonani_wrogowie < count:
-    fn.atakuj(hero,drugihero)
+
+# while hero.pokonani_wrogowie < count:
+#     fn.atakuj(hero,lista_wrogowt1[0])
 
     # hero.attack(drugihero)
     # drugihero.attack(hero)
@@ -36,6 +55,3 @@ while hero.pokonani_wrogowie < count:
     #     #         hero.wyposaz_rekawice(random.choice(ar.rekawice_rarity2))
     #     #
 
-
-
-    input()
