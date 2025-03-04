@@ -4,7 +4,7 @@ import Armor as ar
 import random
 import Funkcjonalnosci as fn
 
-# Tworzenie list wrogów
+
 lista_wrogow = {
     1: [fn.tworz_wroga_t1() for i in range(15)],
     2: [fn.tworz_wroga_t2() for i in range(15)],
@@ -29,6 +29,9 @@ while True:
     fn.atakuj(hero, wrog)
     if wrog.health <= 0:
         lista_wrogow[poziom].remove(wrog)
+        nowa_bron = fn.losuj_bront3()
+        print(f"Pokanono wroga, znazleziono {nowa_bron}")
+        hero.wyposaz_bron(nowa_bron)
 
     if hero.health <= 0:
         print("Twój bohater zginął! Koniec gry.")
