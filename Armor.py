@@ -15,7 +15,7 @@ class Pancerz:
 
 #class Procentowy(Pancerz):
 #   def __init__(self,name,wartosc,rarity,):
-#        super().__init__()
+#        super().__init__() ijkk
 
 
 
